@@ -47,6 +47,7 @@ bool Search(BstNode* root,int data) {
 		return Search(root->right,data);
 	}
 }
+
 int main() {
 	BstNode* root = NULL;  // Creating an empty tree
 	/*Code to test the logic*/
