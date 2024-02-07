@@ -51,6 +51,7 @@ Node* Insert(Node* root, char data) {
 }
 
 int main() {
+    
     /* Code To Test the logic
       Creating an example tree
                 M
@@ -59,6 +60,7 @@ int main() {
              / \   \
             A   C   Z
     */
+
     Node* root = NULL;
     root = Insert(root, 'M');
     root = Insert(root, 'B');
