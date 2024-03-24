@@ -36,18 +36,18 @@ void printNodes() {
 }
 
 int main() {
-    insertNode(0, 'A');
-    insertNode(1, 'B');
-    insertNode(2, 'C');
-    insertNode(3, 'D');
-    insertNode(4, 'E');
-    insertNode(5, 'F');
-    insertNode(6, 'G');
-    insertNode(9, 'H');
-    insertNode(12, 'I');
-    insertNode(19, 'J');
+  insertNode(0, 'A');
+  insertNode(1, 'B');
+  insertNode(2, 'C');
+  insertNode(3, 'D');
+  insertNode(4, 'E');
+  insertNode(5, 'F');
+  insertNode(6, 'G');
+  insertNode(9, 'H');
+  insertNode(12, 'I');
+  insertNode(19, 'J');
 
-    printNodes();
+  printNodes();
 
   cout << "Preorder traversal: ";
   preorderTraversal(0);

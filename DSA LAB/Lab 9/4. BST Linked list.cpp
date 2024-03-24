@@ -56,17 +56,42 @@ int findMax(BstNode* root){
     return current->data;
 }
 
+void InorderTraversal(BstNode* root) {
+    if (root == NULL) {
+        return;
+    }
 
-int main(){
+    // Traverse the left subtree
+    InorderTraversal(root->left);
+
+    // Visit the current node
+    cout << root->data << " ";
+
+    // Traverse the right subtree
+    InorderTraversal(root->right);
+}
+
+int main() {
     BstNode* root = NULL;
-    root = Insert(root, 15);
     root = Insert(root, 20);
-    root = Insert(root, 25);
+    root = Insert(root, 40);
+    root = Insert(root, 10);
     root = Insert(root, 30);
+    root = Insert(root, 15);
+    root = Insert(root, 5);
+    root = Insert(root, 35);
+    root = Insert(root, 50);
+    root = Insert(root, 45);
 
     int min_element = findMin(root);
-    cout << min_element << "\n";
-    cout << findMax(root) << "\n";
+    cout << "Minimum Element: " << min_element << "\n";
+    
+    int max_element = findMax(root);
+    cout << "Maximum Element: " << max_element << "\n";
+    
+    cout << "Inorder Traversal: ";
+    InorderTraversal(root);
     cout << "\n";
 
+    return 0;
 }
