@@ -12,8 +12,8 @@ void bfs(int source){
     //O(v+e)
     while(!q.empty()){
         int cur_v = q.front();
+        cout << cur_v << " ";
         q.pop();
-        //cout << cur_v << " ";
         for(int child: g[cur_v]){
             if(!vis[child]){
                 q.push(child);
@@ -22,6 +22,7 @@ void bfs(int source){
             }
         }
     }
+    cout << "\n";
 }
 
 

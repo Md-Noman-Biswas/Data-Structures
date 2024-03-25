@@ -19,7 +19,7 @@ bool isValid(int x, int y){
 }
 
 vector<pair<int, int>> movements = {
-    {-1, 2}, {1, 2},
+    {-1, 2}, {1, 2}, 
     {-1, -2}, {1, -2},
     {2, -1}, {2, 1},
     {-2, -1}, {-2, 1},

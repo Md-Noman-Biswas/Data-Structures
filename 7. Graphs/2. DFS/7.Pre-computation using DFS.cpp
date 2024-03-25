@@ -18,12 +18,10 @@ in subtree of V
 
 
 void dfs(int vertex, int parent){
-
+    if(vertex % 2 == 0) evenCnt[vertex]++;
+    subtree_sum[vertex] += vertex;
     for(int child: g[vertex]){
-        
         if(child == parent) continue;
-        if(vertex % 2 == 0) evenCnt[vertex]++;
-        subtree_sum[vertex] += vertex;
         dfs(child, vertex);
         subtree_sum[vertex] += subtree_sum[child];
         evenCnt[vertex] += evenCnt[child];
