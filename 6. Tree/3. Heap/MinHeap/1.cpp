@@ -30,10 +30,10 @@ public:
     void deleteElement(int value) {
         auto it = find(heap.begin(), heap.end(), value);
         if (it != heap.end()) {
-            int index = distance(heap.begin(), it);
+            int index = it - heap.begin();
             heap[index] = heap.back();
             heap.pop_back();
-            heapify(index);
+            heapifyDown(index);
         } else {
             cerr << "Element not found in the heap.\n";
         }

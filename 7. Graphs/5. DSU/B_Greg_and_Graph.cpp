@@ -11,47 +11,43 @@ using namespace std;
 const int N = 510;
 const int INF = 1e9 + 10;
 
-int dist[N][N];
-
-void init(){
-    for(int i = 0; i < N; i++){
-        for(int j = 0; j < N; j++){
-            if(i == j) dist[i][j] = 0;
-            else dist[i][j] = INF;
-        }
-    }
-}
+ll dist[N][N];
 
 void solve(){
-    init();
-    int n, m;
-    cin >> n >> m;
-    for(int i = 0; i < m; i++){
-        int x, y, wt;
-        cin >> x >> y >> wt;
-        dist[x][y] = wt;
-    }
-
-    for(int k = 1; k <= n; k++){
-        for(int i = 1; i <= n; i++){
-            for(int j = 1; j <= n; j++){
-                if(dist[i][k] != INF && dist[k][j] != INF){
-                    dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
-                }
-            }
-        }
-    }
-
+    int n;
+    cin >> n;
     for(int i = 1; i <= n; i++){
         for(int j = 1; j <= n; j++){
-            if(dist[i][j] == INF){
-                cout << "I ";
-            }else{
-                cout << dist[i][j] << " ";
+            cin >> dist[i][j];
+        }
+    }
+    vector<ll> deletion_order(n);
+    for(int i = 0; i < n; i++){
+        cin >> deletion_order[i];
+    }
+    vector<ll> ans;
+    reverse(deletion_order.begin(), deletion_order.end());
+    for(int k = 0; k < n; k++){
+        ll k_v = deletion_order[k];
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= n; j++){
+                ll new_dist = dist[i][k_v] + dist[k_v][j];
+                dist[i][j] = min(dist[i][j], new_dist);
             }
         }
-        cout << nl;
+        ll sum = 0;
+        for(int i = 0; i <= k; i++){
+            for(int j = 0; j <= k; j++){
+                sum += dist[deletion_order[i]][deletion_order[j]];
+            }
+        }
+        ans.push_back(sum);
     }
+    reverse(ans.begin(), ans.end());
+    for(auto it: ans){
+        cout << it << " ";
+    }
+    cout << nl;
 }
 
 /* Hey you should check this out

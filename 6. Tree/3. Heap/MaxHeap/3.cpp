@@ -66,32 +66,32 @@ public:
 
     */
 
-    void heapifyDown(int index) {
-        int size = heap.size();
-        while (true) {
-            int leftChild = 2 * index + 1;
-            int rightChild = 2 * index + 2;
-            int largest = index;
+    // void heapifyDown(int index) {
+    //     int size = heap.size();
+    //     while (true) {
+    //         int leftChild = 2 * index + 1;
+    //         int rightChild = 2 * index + 2;
+    //         int largest = index;
 
-            if (leftChild < size && heap[leftChild] > heap[largest]) {
-                largest = leftChild;
-            }
+    //         if (leftChild < size && heap[leftChild] > heap[largest]) {
+    //             largest = leftChild;
+    //         }
 
-            if (rightChild < size && heap[rightChild] > heap[largest]) {
-                largest = rightChild;
-            }
+    //         if (rightChild < size && heap[rightChild] > heap[largest]) {
+    //             largest = rightChild;
+    //         }
 
-            if (largest != index) {
-                swap(heap[index], heap[largest]);
-                index = largest;
-            } else {
-                break;
-            }
-        }
-    }
+    //         if (largest != index) {
+    //             swap(heap[index], heap[largest]);
+    //             index = largest;
+    //         } else {
+    //             break;
+    //         }
+    //     }
+    // }
 
 
-    /*
+    
     //recursive
     void heapifyDown(int index) {
         int size = heap.size();
@@ -113,7 +113,7 @@ public:
         }
     }
 
-    */
+    
 
     // void heapify(int index) {
     //     heapifyUp(index);

@@ -30,7 +30,7 @@ void dijkstra(int source){
         vis[v] = 1;
         for(auto child: g[v]){
             int child_v = child.first;
-            int wt =child.second;
+            int wt = child.second;
             if(dist[v] + wt < dist[child_v]){//dist[v] is same as distance
                 dist[child_v] = dist[v] + wt;
                 st.insert({dist[child_v], child_v});

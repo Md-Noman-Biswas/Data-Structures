@@ -43,7 +43,6 @@ void preorder(Node* root){
 void postorder(Node* root){
     stack<Node*> st;
     stack<char> output;
-
     st.push(root);
 
     while(!st.empty()){
